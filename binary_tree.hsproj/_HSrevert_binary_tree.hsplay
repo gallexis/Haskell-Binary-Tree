@@ -1,0 +1,17 @@
+-- Haskell Playground 1.0
+let tree = list_to_tree [50,40,30,45,35,60,65,70] Leaf
+
+tree
+
+let tree2 = list_to_tree [2,150,54303,6] tree
+
+tree2 
+
+is_value_present 50 tree
+
+tree_to_list (invert_tree tree)
+
+max_val (get_left tree)
+
+delete tree 40
+ 
