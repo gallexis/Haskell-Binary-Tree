@@ -1,8 +1,8 @@
-name: revertbinarytree
+name: Haskell-Binary-Tree
 version: 1.0
 cabal-version: 1.6
 build-type: Simple
-license: AllRightsReserved
+license: PublicDomain
 license-file: ""
 copyright:
 maintainer:
@@ -12,9 +12,9 @@ homepage:
 package-url:
 bug-reports:
 synopsis:
-description:
+description: Managing binary-trees in Haskell
 category:
-author:
+author: Alexis Gallèpe
 tested-with:
 data-files:
 data-dir: ""
@@ -22,7 +22,7 @@ extra-source-files:
 extra-tmp-files:
 extra-doc-files:
 Executable revertbinarytree
-  main-is: HSrevert_binary_tree.hs
+  main-is: HSbinary_tree.hs
   buildable: True
   build-tools:
   cpp-options:
