@@ -83,7 +83,7 @@ rotateRight t@(Node oY idY cY (Node oX idX cX leftX rightX _) rightY parent) = N
 rotateRight n = n
 
 
-
+{-
 insert::(Ord a)=>a->Tree a->Tree a
 insert x Leaf = Node x Leaf Leaf Leaf
 insert x t@(Node a l r p) = insertIt x t p
@@ -93,14 +93,18 @@ insert x t@(Node a l r p) = insertIt x t p
         | x <  a = Node a (insertIt x l t) r p
         | x >  a = Node a l (insertIt x l t) p
 
+-}
+
 insert:: Tree o -> o -> Int -> Tree o
 insert  Leaf o id = Node o id Red Leaf Leaf Leaf
-insert current@(Node oParent idParent color left right parent) o id = insert2 current o id parent
-  where insert2 Leaf o2 id2 parent2 
-        insert2 current2@(Node oP idP c l r p) o2 id2 parent2 
-        | id2 == idP = current2
-        | id > idParent  =  (Node oParent idParent color left (insert2 right o id current) parent)
-        | id < idParent  =  (Node oParent idParent color (insert2 left o id current) right parent)
+insert node o id = insert2 node o id Leaf
+ 
+ where  
+      insert2 Leaf o id  parent = Node o id Red Leaf Leaf parent
+      insert2 current@(Node oP idP c l r p) o id parent
+          | id == idP = current
+          | id > idP  =  insert2 r o id current
+          | id < idP  =  insert2 l o id current
 
     
 
@@ -145,7 +149,7 @@ dotise :: Tree String -> String
 dotise tree = "digraph \"complet3\" { \n node [fontname=\"DejaVu-Sans\", shape=circle] \n \n"++  (tree_to_list tree) ++ "\n" ++ (display_arcs tree) ++ " }"
 
 makeTree = do        
-    writeFile "/Users/alexisgallepe/Documents/Haskell-Binary-Tree/tree.dot" (dotise (list_to_tree ([20,19..0]) Leaf))
+    writeFile "/Users/alexisgallepe/Documents/Haskell-Binary-Tree/tree.dot" (dotise (list_to_tree ([0..5]) Leaf))
     
 main = makeTree
 

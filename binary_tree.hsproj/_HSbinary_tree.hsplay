@@ -12,8 +12,8 @@ tree2
  
 list_to_tree [0..40] Leaf
 
-list_to_tree [1..5] Leaf
+list_to_tree [1..2] Leaf
 
 
-dotise tree2
+--dotise tree2
 
