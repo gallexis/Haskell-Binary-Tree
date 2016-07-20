@@ -10,8 +10,11 @@ author: Alexis Gallèpe
 extra-source-files:
     balanced-search-trees-in-haskell.txt
     README.md
+x-ghc-framework-version: 7.10.3-5.9-2
+x-last-ide-version: HfM1.2.1
 Executable revertbinarytree
   main-is: HSbinary_tree.hs
   buildable: True
   build-depends:
-      base -any
+      base -any,
+      process -any

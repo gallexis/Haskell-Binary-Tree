@@ -9,13 +9,11 @@ tree2
 
 [1,2] !! 1
 
-is_value_present 50 tree
-
-
-delete tree 40
  
 list_to_tree [0..40] Leaf
 
 list_to_tree [1..5] Leaf
 
+
+dotise tree2
 
